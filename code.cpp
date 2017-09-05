@@ -8,20 +8,24 @@
 #include <string.h>
 #include <cstring>
 using namespace std;
+char a[9] = {'1','2','3','4','5','6','7','8','9'};
+void draw()
+{
+    cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
+    cout << "-----------\n";
+    cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
+    cout << "-----------\n";
+    cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+}
 int main(int argc, const char * argv[]) {
 
-    char a[9] = {'1','2','3','4','5','6','7','8','9'};
     int count = 1;
     int count1 = 1;
     int p1count = 0;
     int mode;
     string input1 , input2 , input3 , input4;
     srand(time(NULL));
-    cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
-    cout << "-----------\n";
-    cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
-    cout << "-----------\n";
-    cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+    draw();
     cout << "請輸入1跟玩家對戰 or 2跟電腦對戰 : \n";
     cin >> mode;
     if(mode == 1)
@@ -36,11 +40,7 @@ int main(int argc, const char * argv[]) {
                 if(a[num1-1] == input1.at(0))
                 {
                     a[num1-1] = (char)'O';
-                    cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
-                    cout << "-----------\n";
-                    cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
-                    cout << "-----------\n";
-                    cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+                    draw();
                     count++;
                     p1count++;
                 }
@@ -57,11 +57,7 @@ int main(int argc, const char * argv[]) {
                 if(a[num2-1] == input2.at(0))
                 {
                     a[num2-1] = (char)'X';
-                    cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
-                    cout << "-----------\n";
-                    cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
-                    cout << "-----------\n";
-                    cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+                    draw();
                     count--;
                 }
                 else
@@ -102,11 +98,7 @@ int main(int argc, const char * argv[]) {
                 if(a[num3-1] == input3.at(0))
                 {
                     a[num3-1] = (char)'O';
-                    cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
-                    cout << "-----------\n";
-                    cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
-                    cout << "-----------\n";
-                    cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+                    draw();
                     count1++;
                     p1count++;
                 }
@@ -124,22 +116,14 @@ int main(int argc, const char * argv[]) {
                     if(a[4] != 'O' && a[4] != 'X')
                     {
                         a[4] = (char)'X';
-                        cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
-                        cout << "-----------\n";
-                        cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
-                        cout << "-----------\n";
-                        cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+                        draw();
                         count1--;
                         break;
                     }
                     else if(a[randnum] != 'O' && a[randnum] != 'X' && (a[4] == 'O' || a[4] == 'X'))
                     {
                         a[randnum] = (char)'X';
-                        cout << " " << a[0] << " | " << a[1] << " | " << a[2] << " \n";
-                        cout << "-----------\n";
-                        cout << " " << a[3] << " | " << a[4] << " | " << a[5] << " \n";
-                        cout << "-----------\n";
-                        cout << " " << a[6] << " | " << a[7] << " | " << a[8] << " \n";
+                        draw();
                         count1--;
                         break;
                     }
